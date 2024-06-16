@@ -4,25 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modern Note Taking App</title>
-  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
+  <nav>
+  <div class="navbar">
+    <div class="logo">Note App</div>
+    <div class="nav-links">
+      <a id="all-notes-link" href="#" onclick="displayAllNotes()" class="active">All Notes</a>
+      <a id="favorites-link" href="#" onclick="displayFavoriteNotes()">Favorites</a>
+      <a id="pinned-link" href="#" onclick="displayPinnedNotes()">Pinned</a>
+    </div>
+  </div>
+</nav>
 
-        <div id="list-header">
-            <div id="addNoteDiv" onclick="popup()">
-                <i class="fa-solid fa-plus"></i>
-            </div>
-            <div class="blankDiv"></div>
-            <div class="blankDiv"></div>
-        </div>
-        
-        <div id="list-container">
-            <ul id="notes-list"></ul>
-        </div>
+
+  <div id="container">
+    <div id="list-header">
+      <h1>My Notes</h1>
+      <div id="addNoteDiv" onclick="showPopup('create')">
+        <i class="fas fa-plus"></i>
+      </div>
     </div>
 
-    <script src="./script.js"></script>
+    <ul id="notes-list" class="flex-container"></ul>
+
+    <div id="pagination">
+      <button id="pagination-prev" onclick="changePage(-1)" disabled>&laquo; Prev</button>
+      <button id="pagination-next" onclick="changePage(1)">Next &raquo;</button>
+    </div>
+  </div>
+
+  <div id="popupContainer" class="hidden">
+    <div class="popup">
+      <h1 id="popupTitle">New Note</h1>
+      <input type="text" id="note-title" placeholder="Enter title..." />
+      <textarea id="note-text" placeholder="Enter your note..."></textarea>
+      <div class="color-options">
+        <span class="note-color-1" data-color="1" onclick="selectColor(this)"></span>
+        <span class="note-color-2" data-color="2" onclick="selectColor(this)"></span>
+        <span class="note-color-3" data-color="3" onclick="selectColor(this)"></span>
+        <span class="note-color-4" data-color="4" onclick="selectColor(this)"></span>
+        <span class="note-color-5" data-color="5" onclick="selectColor(this)"></span>
+      </div>
+      <div id="color-prompt" style="color: red; display: none;">Please select a color for the note</div>
+      <input type="hidden" id="selected-color" />
+      <div id="btn-container">
+        <button id="submitBtn">Create Note</button>
+        <button id="closeBtn" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
