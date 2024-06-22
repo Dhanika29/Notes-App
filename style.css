@@ -73,18 +73,26 @@ nav {
 #addNoteDiv {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  cursor: pointer;
+  padding: 20px;
   border-radius: 8px;
-  transition: background-color 0.3s;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #addNoteDiv:hover {
+  transition: 0.25s;
   background-color: #f1f1f1;
 }
 
+
 #addNoteDiv i {
-  font-size: 40px;
-  color: #666;
+  font-size: 70px;
+  color: gainsboro;
 }
 
 #notes-list {
@@ -182,8 +190,7 @@ nav {
   justify-content: center;
 }
 
-.popup input[type="text"]
- {
+.popup input[type="text"] {
   width: calc(100% - 20px);
   margin: 10px 0;
   padding: 10px;
@@ -203,7 +210,6 @@ nav {
   font-size: 14px;
   height: 150px; /* Increased height specifically for textarea */
 }
-
 
 .color-options {
   display: flex;
@@ -251,8 +257,8 @@ nav {
 }
 
 #closeBtn {
-  background-color: gainsboro;
-  color: #333;
+  background-color:  #8c53ff;
+  color: #fff;
 }
 
 .hidden {
