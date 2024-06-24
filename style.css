@@ -11,7 +11,7 @@ body {
 
 nav {
   width: 100%;
-  background-color: #012955;
+  background-color: #071952;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
@@ -44,10 +44,27 @@ nav {
   transition: color 0.3s;
   padding-right: 80px;
   cursor: pointer;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #5a1fb3;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .nav-links a:hover {
-  color: #5a1fb3;
+  color: #EBF4F6;
 }
 
 #container {
@@ -71,28 +88,24 @@ nav {
 }
 
 #addNoteDiv {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  height: 100px;
-  width: 100px;
-  margin: 10px;
-  cursor: pointer;
+  background-color: #088395;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 #addNoteDiv:hover {
-  transition: 0.25s;
-  background-color: #f1f1f1;
+  background-color: #37B7C3;
 }
 
-
 #addNoteDiv i {
-  font-size: 70px;
-  color: gainsboro;
+  font-size: 30px;
+  color: #ffffff;
 }
 
 #notes-list {
@@ -163,7 +176,7 @@ nav {
 }
 
 .edit-icon:hover {
-  color: #5a1fb3;
+  color: #EBF4F6;
 }
 
 .delete-icon:hover {
@@ -178,7 +191,7 @@ nav {
   width: 80%;
   max-width: 400px;
   height: auto;
-  background-color: rgb(249, 245, 212);
+  background-color: #EBF4F6;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -196,19 +209,20 @@ nav {
   padding: 10px;
   box-sizing: border-box;
   border-radius: 4px;
-  border: 2px solid #282828;
+  border: 2px solid #071952;
   font-size: 14px;
-  height: 50px; /* Increased height */
+  height: 50px;
 }
+
 .popup textarea {
   width: calc(100% - 20px);
   margin: 10px 0;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 4px;
-  border: 2px solid #8c53ff;
+  border: 2px solid #071952;
   font-size: 14px;
-  height: 150px; /* Increased height specifically for textarea */
+  height: 150px;
 }
 
 .color-options {
@@ -240,11 +254,11 @@ nav {
 #submitBtn,
 #closeBtn {
   width: 120px;
-  background-color: #8c53ff;
+  background-color: #088395;
   color: #fff;
   font-size: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 10px;
   cursor: pointer;
   margin: 10px;
@@ -253,11 +267,11 @@ nav {
 
 #submitBtn:hover,
 #closeBtn:hover {
-  background-color: #5a1fb3;
+  background-color: #37B7C3;
 }
 
 #closeBtn {
-  background-color:  #8c53ff;
+  background-color: #088395;
   color: #fff;
 }
 
@@ -293,11 +307,11 @@ nav {
 }
 
 #pagination button {
-  background-color: #8c53ff;
+  background-color: #088395;
   color: #fff;
   font-size: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 10px;
   cursor: pointer;
   margin: 0 5px;
@@ -305,7 +319,7 @@ nav {
 }
 
 #pagination button:hover {
-  background-color: #5a1fb3;
+  background-color: #37B7C3     ;
 }
 
 @media (max-width: 900px) {
